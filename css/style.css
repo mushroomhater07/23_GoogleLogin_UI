@@ -1,0 +1,243 @@
+/* adding google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.wrapper {
+  background: #fff;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 40px 50px;
+  width: 60vw;
+  /* height: 80vh; */
+  /* max-height: 480px; */
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100px;
+  max-height: 50px;
+}
+
+.header-text {
+  padding-bottom: 20px;
+}
+
+.header-text h2,
+.header-text p {
+  text-align: center;
+  padding: 5px;
+}
+
+.header-text h2 {
+  font-weight: 450;
+  font-size: 1.8rem;
+}
+
+.header-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.field {
+  position: relative;
+}
+
+.input-field {
+  border: 2px solid #c2c2c2;
+  padding: 20px 25px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.input-label {
+  cursor: text;
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-size: 1.3rem;
+  transition: top .2s ease, left .2s ease, font-size .2s ease;
+}
+
+.input-field:focus {
+  border-color: rgb(26, 115, 233);
+}
+
+.input-field:focus~.input-label {
+  top: -10px;
+  left: 20px;
+  font-size: 1rem;
+  background: #fff;
+  padding: 0 5px;
+  color: rgb(26, 115, 233);
+}
+
+.input-field:not(:placeholder-shown).input-field:not(:focus)~.input-label {
+  top: -10px;
+  left: 20px;
+  font-size: 1rem;
+  background: #fff;
+  padding: 0 5px;
+}
+p{
+  margin: 0;
+}
+/* input[type="password"] {
+  margin-bottom: 0px;
+} */
+
+.color-text {
+  color: rgb(26, 115, 233);
+  font-weight: bold;
+  font-family: Sans-Serif;
+  font-size: 1.1rem;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.guest-mode {
+  margin-top: 10vh;
+  font-size: 1.1rem;
+}
+
+.btn-field {
+  margin-top: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#emailsub {
+  margin-top: 7vh !important;
+}
+.btn {
+  width: 90px;
+  font-size: 1.1rem;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: rgb(26, 115, 233);
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+  html {
+    font-size: 70%;
+  }
+
+  body {
+    height: auto;
+  }
+
+  .form-container {
+    /* transform: scale(0.5); */
+    width: 85vh;
+    margin: 50px auto;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 30px 20px;
+    border: 1px solid #e1e1e1;
+  }
+
+  .header-text p {
+    margin-bottom: 0;
+  }
+  .forget-field{
+    padding-top: -20px;
+  }
+  .input-field {
+    padding: 12px 20px;
+    /* margin-bottom: 15px; */
+    border: 1px solid #c2c2c2;
+  }
+
+  .input-label {
+    top: 12px;
+    left: 20px;
+  }
+
+  .input-field:focus~.input-label,
+  .input-field:not(:placeholder-shown).input-field:not(:focus)~.input-label {
+    top: -6px;
+    left: 17px;
+  }
+
+  .guest-mode-field {
+    margin: 15px 0;
+  }
+
+  .btn {
+    width: 65px;
+  }
+}
+
+.switchContainer{border: 1px solid #000;
+  border-radius: 90px;
+  width: auto;
+   padding:0 5px 0 5px
+}
+.switchContainer *{
+  display: inline-block;
+}
+#emailparse{
+  margin: 0px 10px 5px 10px;
+}
+#arrow{    color: #3c4043;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  height: 18px;
+  margin-left: 4px;
+  -webkit-transition: transform .2s cubic-bezier(.4,0,.2,1);
+  transition: transform .2s cubic-bezier(.4,0,.2,1);
+  width: 18px;}
+svg{
+  margin-top: 5px;
+}
+.profpic{
+  
+  -webkit-align-items: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #dadce0;
+  color: #3c4043;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  max-width: 100%;
+  position: relative;
+}
+
