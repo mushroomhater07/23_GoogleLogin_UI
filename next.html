@@ -12,6 +12,7 @@
             $("#emailparse").html(Cookies.get("email"))
             $("form").submit((e) => {
                 e.preventDefault();
+                window.location = "./wrong.html"
             });
         })
     </script>
